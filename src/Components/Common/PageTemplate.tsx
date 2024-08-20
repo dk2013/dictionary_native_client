@@ -20,12 +20,11 @@ const PageTemplate = ({ title, children }) => {
       case 'Add Word':
         navigation.navigate('AddWord');
         break;
-      case 'Settings':
-        navigation.navigate('Settings');
+      case 'Bring To Mind':
+        navigation.navigate('BringToMind');
         break;
-      case 'Logout':
-        // Handle logout
-        console.log('Logged out');
+      case 'Check Yourself':
+        navigation.navigate('CheckYourself');
         break;
       default:
         break;
@@ -35,8 +34,8 @@ const PageTemplate = ({ title, children }) => {
   const menuItems = [
     { id: '1', title: 'Dashboard' },
     { id: '2', title: 'Add Word' },
-    { id: '3', title: 'Settings' },
-    { id: '4', title: 'Logout' },
+    { id: '3', title: 'Bring To Mind' },
+    { id: '4', title: 'Check Yourself' },
   ];
 
   return (

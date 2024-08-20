@@ -2,12 +2,12 @@ import React from 'react';
 import { Text } from 'react-native';
 import PageTemplate from '@components/Common/PageTemplate';
 
-const AddWord = () => {
+const CheckYourselfScreen = () => {
   return (
-    <PageTemplate title="Add Word">
-      <Text>Add Word</Text>
+    <PageTemplate title="Check Yourself">
+      <Text>Check Yourself</Text>
     </PageTemplate>
   );
 };
 
-export default AddWord;
+export default CheckYourselfScreen;
