@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import PageTemplate from 'PageTemplate';
+import PageTemplate from '@components/Common/PageTemplate';
 
 const AddWord = () => {
   return (
