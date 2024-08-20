@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Modal, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Modal, FlatList, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
@@ -85,6 +85,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    width: Platform.OS === 'web' ? '80%' : '100%',
+    maxWidth: Platform.OS === 'web' ? 600 : '100%',
+    alignSelf: Platform.OS === 'web' ? 'center' : 'auto',
   },
   header: {
     flexDirection: 'row',
