@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import DashboardScreen from '@components/Dictionary/Dashboard/DashboardScreen';
 import AddWord from '@components/Dictionary/AddWord/AddWordScreen';
 import BringToMind from '@components/Dictionary/BringToMind/BringToMindScreen';
@@ -11,6 +12,10 @@ import {
   dictionaryObj,
   languageCodes,
 } from "@constants/dictionary";
+import {
+  saveAndGetUpdatedDictionary,
+  deleteAndGetUpdatedDictionary,
+} from "./utils";
 
 const linking = {
 //   prefixes: ['http://localhost:8082/'], // Adjust to your local server or production domain
@@ -74,6 +79,19 @@ const Dictionary = () => {
 
       return updatedDictionary;
     });
+  };
+
+  const saveDictionaryToStorage = (
+    key: string,
+    dictionary: tDictionary
+  ): void => {
+    // TODO: Remember about the limit of 5Mb on ?web?
+    // Save Dictionary object to Local Storage
+    try {
+      AsyncStorage.setItem("dictionary", JSON.stringify(dictionary));
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
