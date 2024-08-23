@@ -103,7 +103,8 @@ const Dictionary = () => {
       >
         <Stack.Screen name="Dashboard" component={DashboardScreen} />
         <Stack.Screen name="AddWord">
-          {props => <AddWord title="Add Word"
+          {props => <AddWord
+            title="Add Word"
             dictionary={dictionary}
             translateFrom={translateFrom}
             translateTo={translateTo}
@@ -113,7 +114,16 @@ const Dictionary = () => {
             changeTranslateTo={(v) => setTranslateTo(v)}
           />}
         </Stack.Screen>
-        <Stack.Screen name="BringToMind" component={BringToMind} />
+        <Stack.Screen name="BringToMind">
+          {props => <BringToMind
+            title="Bring To Mind"
+            dictionary={dictionary}
+            translateFrom={translateFrom}
+            translateTo={translateTo}
+            changeTranslateFrom={(v) => setTranslateFrom(v)}
+            changeTranslateTo={(v) => setTranslateTo(v)}
+          />}
+        </Stack.Screen>
         <Stack.Screen name="CheckYourself" component={CheckYourself} />
       </Stack.Navigator>
     </NavigationContainer>
