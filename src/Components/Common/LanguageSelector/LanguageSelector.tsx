@@ -4,14 +4,13 @@ import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { FaArrowRight } from "react-icons/fa";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+interface LanguageSelectorProps {
+  onSwapLanguages: () => void;
+  translateFrom: string;
+  translateTo: string;
+}
 
-// interface LanguageSelectorProps {
-//   onSwapLanguages: () => void;
-//   translateFrom: string;
-//   translateTo: string;
-// }
-
-const LanguageSelector = (props) => {
+const LanguageSelector: FC<LanguageSelectorProps> = (props) => {
   return (
     <View style={styles.languageSelector}>
       <Text>{props.translateFrom} </Text>

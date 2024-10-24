@@ -1,7 +1,13 @@
-import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import React, { FC } from 'react';
+import { View, TextInput, StyleSheet } from 'react-native';
 
-const NewWordInput = (props) => {
+interface NewWordInputProps {
+  value: string;
+  onNewWordChange: (e: string) => void;
+  onKeyDown: (key: string) => void;
+}
+
+const NewWordInput: FC<NewWordInputProps> = (props) => {
   return (
     <View style={styles.inputContainer}>
       <TextInput

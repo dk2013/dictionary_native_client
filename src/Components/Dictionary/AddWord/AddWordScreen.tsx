@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState, useCallback } from "react";
-import { Text } from 'react-native';
+import { tDictionary } from "../../../Types/dictionary";
 import PageTemplate from '@components/Common/PageTemplate';
 import LanguageSelector from '@components/Common/LanguageSelector/LanguageSelector';
 import NewWordInput from '@components/Dictionary/AddWord/NewWordInput/NewWordInput';
@@ -7,7 +7,28 @@ import TranslationInput from '@components/Dictionary/AddWord/TranslationInput/Tr
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Button from '@components/Common/Button/Button';
 
-const AddWord = (props) => {
+interface AddWordProps {
+  title?: string;
+  dictionary: tDictionary;
+  translateFrom: string;
+  translateTo: string;
+  onSaveTranslation: (
+    newWord: string,
+    translation: string,
+    translateFrom: string,
+    translateTo: string
+  ) => void;
+  onDeleteTranslation: (
+    newWord: string,
+    translation: string,
+    translateFrom: string,
+    translateTo: string
+  ) => void;
+  changeTranslateFrom: (v: string) => void;
+  changeTranslateTo: (v: string) => void;
+}
+
+const AddWordScreen: FC<AddWordProps> = (props) => {
   const [newWord, setNewWord] = useState<string>("");
   const [translation, setTranslation] = useState<string>("");
   const [translationExists, setTranslationExists] = useState<boolean>(false);
@@ -127,4 +148,4 @@ const AddWord = (props) => {
   );
 };
 
-export default AddWord;
+export default AddWordScreen;

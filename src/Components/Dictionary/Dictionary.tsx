@@ -5,9 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DashboardScreen from '@components/Dictionary/Dashboard/DashboardScreen';
-import AddWord from '@components/Dictionary/AddWord/AddWordScreen';
-import BringToMind from '@components/Dictionary/BringToMind/BringToMindScreen';
-import CheckYourself from '@components/Dictionary/CheckYourself/CheckYourselfScreen';
+import AddWordScreen from '@components/Dictionary/AddWord/AddWordScreen';
+import BringToMindScreen from '@components/Dictionary/BringToMind/BringToMindScreen';
+import CheckYourselfScreen from '@components/Dictionary/CheckYourself/CheckYourselfScreen';
 import {
   dictionaryObj,
   languageCodes,
@@ -103,7 +103,7 @@ const Dictionary = () => {
       >
         <Stack.Screen name="Dashboard" component={DashboardScreen} />
         <Stack.Screen name="AddWord">
-          {props => <AddWord
+          {props => <AddWordScreen
             title="Add Word"
             dictionary={dictionary}
             translateFrom={translateFrom}
@@ -115,7 +115,7 @@ const Dictionary = () => {
           />}
         </Stack.Screen>
         <Stack.Screen name="BringToMind">
-          {props => <BringToMind
+          {props => <BringToMindScreen
             title="Bring To Mind"
             dictionary={dictionary}
             translateFrom={translateFrom}
@@ -124,7 +124,7 @@ const Dictionary = () => {
             changeTranslateTo={(v) => setTranslateTo(v)}
           />}
         </Stack.Screen>
-        <Stack.Screen name="CheckYourself" component={CheckYourself} />
+        <Stack.Screen name="CheckYourself" component={CheckYourselfScreen} />
       </Stack.Navigator>
     </NavigationContainer>
     );

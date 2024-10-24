@@ -1,5 +1,5 @@
-import React, { FC, ReactNode } from 'react';
-import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
+import React, {FC, ReactNode} from 'react';
+import {TouchableOpacity, Text, StyleSheet, View} from 'react-native';
 
 interface ButtonProps {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ onSave, children, disabled = false }) => {
+const Button: FC<ButtonProps> = ({onSave, children, disabled = false}) => {
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={onSave} disabled={disabled} style={[styles.button, disabled && styles.disabledButton]}>

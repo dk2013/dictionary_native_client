@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { fields, sortOrders } from "../TranslationTableModel.ts";
+import { fields, sortOrders } from "../TranslationTableModel";
 
 interface ColumnHeaderProps {
   position: string;

@@ -1,4 +1,4 @@
-import { tDictionary } from "../../Common/Types/dictionary";
+import { tDictionary } from "@types/dictionary";
 
 export const saveAndGetUpdatedDictionary = (
   prevDictionary: tDictionary,

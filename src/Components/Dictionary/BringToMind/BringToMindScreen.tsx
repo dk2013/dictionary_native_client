@@ -1,8 +1,18 @@
 import React, { FC } from "react";
+import { tDictionary } from "../../../Types/dictionary";
 import PageTemplate from '@components/Common/PageTemplate';
 import TranslationTable from '@components/Dictionary/BringToMind/TranslationTable/TranslationTable';
 
-const BringToMindScreen = (props) => {
+interface BringToMindProps {
+  title?: string;
+  dictionary: tDictionary;
+  translateFrom: string;
+  translateTo: string;
+  changeTranslateFrom: (v: string) => void;
+  changeTranslateTo: (v: string) => void;
+}
+
+const BringToMindScreen: FC<BringToMindProps> = (props) => {
   const handleSwapLanguages = () => {
     const newTranslateTo = props.translateFrom;
     const newTranslateFrom = props.translateTo;

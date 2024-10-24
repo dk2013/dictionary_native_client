@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { FC, useState, ReactNode } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal, FlatList, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
-const PageTemplate = ({ title, children }) => {
+interface PageTemplateProps {
+  title: string;
+  children: ReactNode;
+}
+
+const PageTemplate: FC<PageTemplateProps> = ({ title, children }) => {
   const navigation = useNavigation();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
